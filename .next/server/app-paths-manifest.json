@@ -1,7 +1,4 @@
 {
   "/about/page": "app/about/page.js",
-  "/cate-painting/page": "app/cate-painting/page.js",
-  "/cate-web/page": "app/cate-web/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

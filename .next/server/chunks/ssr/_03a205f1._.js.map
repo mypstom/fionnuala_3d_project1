@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 24, "column": 0}, "map": {"version":3,"sources":["file:///Users/fiona/Desktop/nccu/school/113_2_spring/3d%20web/fionnuala_3d_project1/src/app/about/page.js"],"sourcesContent":["import Image from \"next/image\";\nimport AvatarImg from \"@/../public/Avatar.png\";\n\nexport default function About() {\n  return (\n    <div className=\"w-full h-full bg-white flex justify-center items-center rounded-2xl\">\n      \n      <p>ABOUT</p>\n      \n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;AACA;;;;AAEe,SAAS;IACtB,qBACE,6WAAC;QAAI,WAAU;kBAEb,cAAA,6WAAC;sBAAE;;;;;;;;;;;AAIT","debugId":null}}]
+}
