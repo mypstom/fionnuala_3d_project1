@@ -4,7 +4,6 @@ import "./globals.css";
 import Image from "next/image";
 import AvatarImg from "@/../public/Avatar.png";
 import Link from "next/link";
-import LinkImg1 from "@/image/帝寶.png"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +15,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const links = [
+  {
+    href: "https://www.threads.com/@fionnualaaa_",
+    icon: "threads.svg",
+  },
+  {
+    href: "https://www.instagram.com/fionnualaaa_/",
+    icon: "ig.svg",
+  },
+  {
+    href: "mailto:111306016@g.nccu.edu.tw",
+    icon: "/mail.svg",
+  },
+];
+
 export const metadata = {
   title: "費歐娜娜的數位履歷",
-  description: "瀏覽人次達 1000 萬，好評熱賣中",
+  description: "我是一個翹課的學生。",
 };
 
 export default function RootLayout({ children }) {
@@ -31,7 +45,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="w-screen h-screen overflow-y-auto flex flex-col sm:flex-row gap-5 bg-pink-100 p-8">
-          <div className="min-w-[320px] w-full sm:w-[320px] h-full rounded-2xl bg-white border-4 border-pink-300 flex justify-start items-center flex-col p-[30px] pt-[80px] overflow-y-auto overflow-x-hidden shadow-xl">
+          <div className="min-w-[320px] w-full sm:w-[320px] h-full rounded-2xl bg-yellow-100 border-4 border-pink-300 flex justify-start items-center flex-col p-[30px] pt-[80px] overflow-y-auto overflow-x-hidden shadow-xl">
             <Image
               src={AvatarImg}
               alt="Avatar"
@@ -45,35 +59,42 @@ export default function RootLayout({ children }) {
             </p>
 
             {/* 社群連結 */}
+          
             <div className="flex gap-2 my-5">
-              {[...Array(5)].map((_, i) => (
-                <a href="https://google.com" target="_blank" key={i}>
-                  <div className="bg-blue-200 hover:bg-pink-200 transition w-[40px] h-[40px] rounded-full border border-pink-400"></div>
+               {links.map((link, i) => (
+                <a href={link.href} target="_blank" key={i}>
+                  <div
+                    className={`transition w-[40px] h-[40px] rounded-full border border-pink-400 hover:scale-105 transition flex items-center justify-center bg-white ${link.color}`} >
+                      <Image
+                        src={link.icon}
+                        alt={`icon-${i}`}
+                        width={i === 0 ? 28 : 30}
+                        height={i === 0 ? 28 : 30}
+                        className="object-contain"
+                      />
+                  </div>
                 </a>
               ))}
             </div>
 
             {/* 頁面切換 */}
             <div className="w-full flex flex-col gap-2">
+              <Link href="/">
+                <div className="w-full h-[84px] bg-pink-100 hover:bg-pink-200 text-pink-300 rounded-xl flex items-center justify-center text-lg font-medium shadow">
+                  Home Page
+                </div>
+              </Link>
+
               <Link href="/about">
-                <div className="w-full h-[84px] bg-pink-200 hover:bg-pink-300 text-white rounded-xl flex items-center justify-center text-lg font-medium shadow">
-                  About
+                <div className="w-full h-[84px] bg-blue-100 hover:bg-blue-200 text-blue-300 rounded-xl flex items-center justify-center text-lg font-medium shadow">
+                  About Meeeeee
                 </div>
               </Link>
 
-              <Link href="/cate-web">
-                <div className="w-full h-[84px] bg-blue-200 hover:bg-blue-300 text-white rounded-xl flex items-center justify-center text-lg font-medium shadow">
-                  Cate-Web
-                </div>
-              </Link>
-
-              <div className="w-full h-[84px] bg-green-200 hover:bg-green-300 text-white rounded-xl flex items-center justify-center text-lg font-medium shadow">
-                作品分類一
-              </div>
-              <div className="w-full h-[84px] bg-pink-300 hover:bg-pink-400 text-white rounded-xl flex items-center justify-center text-lg font-medium shadow">
+              <div className="w-full h-[84px] bg-pink-100 hover:bg-pink-200 text-pink-300 rounded-xl flex items-center justify-center text-lg font-medium shadow">
                 作品分類二
               </div>
-              <div className="w-full h-[84px] bg-blue-300 hover:bg-blue-400 text-white rounded-xl flex items-center justify-center text-lg font-medium shadow">
+              <div className="w-full h-[84px] bg-blue-100 hover:bg-blue-200 text-blue-300 rounded-xl flex items-center justify-center text-lg font-medium shadow">
                 作品分類三
               </div>
             </div>

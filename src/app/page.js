@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image";
-import AvatarImg from "@/../public/Avatar.png";
 import LolipopImg from "@/../public/lolipop.png";
 import { useState } from "react";
 import BlurText from "../component/BlurText";
@@ -44,7 +43,7 @@ export default function Home() {
           alt="lolipop"
           className={`w-[68px] transition-transform duration-200 ease-in-out ${isBouncing ? "scale-125" : "scale-100"}`}
         />
-        <div className="text-2xl">{lolipop}</div>
+        <div className="text-2xl text-rose-300">{lolipop}</div>
       </div>
     </div>
   );
