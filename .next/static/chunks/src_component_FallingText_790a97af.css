@@ -1,0 +1,36 @@
+/* [project]/src/component/FallingText.css [app-client] (css) */
+.falling-text-container {
+  z-index: 1;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 2em;
+  position: relative;
+}
+
+.falling-text-target {
+  display: inline-block;
+}
+
+.word {
+  color: pink;
+  user-select: none;
+  margin: 0 2px;
+  display: inline-block;
+}
+
+.highlighted {
+  color: #db7093;
+  font-weight: bold;
+}
+
+.falling-text-canvas {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+/*# sourceMappingURL=src_component_FallingText_790a97af.css.map*/
